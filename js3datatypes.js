@@ -17,4 +17,7 @@ console.log(typeof age);
 console.log(typeof isFollow);
 console.log(typeof job);
 console.log(typeof null);// null always show as object
+
+console.log(typeof bc);
+console.log(typeof bc);
 console.log(typeof bc);
