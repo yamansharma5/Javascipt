@@ -1,0 +1,37 @@
+<!-- // async and wait functions javascript -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set interval function</title>
+ </head>
+ <body>
+    <h3>hello yaman sharma</h3>
+    <button id="stop">sstop</button>
+    <button id="start">start</button>
+ </body>
+ <script>
+    // setInterval(function(){
+    //     console.log("yaman");
+    // },3000)
+    
+    // const sayDate = function(str){
+    //     console.log(str,Date.now());
+    // }
+    // const stopInt = setInterval( sayDate,2000,'hi');
+    // clearInterval(stopInt)
+
+
+    //now button functionality
+    const repeat = function(){
+        console.log("future software engineer");
+    }
+    document.querySelector('#start').addEventListener("click",function(){
+        let h3 = document.querySelector('h3')
+        h3.innerHTML= setInterval(repeat,2000);
+        
+
+    })
+ </script>
+ </html>

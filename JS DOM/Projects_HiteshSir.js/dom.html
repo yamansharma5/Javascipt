@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM addition and removal</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+
+    <script>
+        function addLanguage(langName){
+            const li = document.createElement("li");
+            li.innerHTML =langName;
+            document.querySelector("language").appendChild(li);  
+        }
+
+        addLanguage("python");//function call
+        addLanguage("bvhf")
+
+
+        //thoda better approach
+         function addLanguage(langName){
+            const li = document.createElement("li");
+            li.appendChild(document.createTextNode(langName));
+             document.querySelector("language").appendChild(li); 
+        }
+
+        //edit 
+        const secLang =document.querySelector('li:nth-clild(2)');
+        // const newli=document.createElement('li');
+        secLang.innerHTML="Mojo";
+        // secLang.replaceWith(newli);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!-- // async and wait functions javascript -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout and set interval function</title>
+ </head>
+ <body>
+    <h3>hello yaman sharma</h3>
+    <button id="stop">sstop</button>
+ </body>
+ <script>
+
+    // setTimeout(function(){
+    //     console.log("hello yaman");
+        
+    // },2000)
+
+    const changeText = function(){
+        let h3 =document.querySelector("h3");
+        h3.innerHTML= "the future software engineer"
+        // console.log("hello yaman sharma");
+        
+    }
+    const stop = setTimeout(changeText, 2000);
+    //for stoping
+    document.querySelector("#stop").addEventListener("click",function(){
+        clearTimeout(stop);
+    })
+
+    
+
+    
+
+
+    
+    // setInterval(function(){
+    //     console.log("hello ji");
+        
+    // },2000)
+ </script>
+ </html>

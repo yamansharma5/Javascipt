@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Day Night Toggle</title>
+
+<style>
+  :root {
+    --bg: #f9fafb;
+    --text: #111827;
+    --toggle-bg: #e5e7eb;
+    --circle: #facc15;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* Toggle wrapper */
+  .toggle {
+    position: relative;
+    width: 90px;
+    height: 44px;
+  }
+
+  .toggle input {
+    display: none;
+  }
+
+  /* Background bar */
+  .slider {
+    position: absolute;
+    inset: 0;
+    background-color: var(--toggle-bg);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+  }
+
+  /* Toggle circle */
+  .slider::before {
+    content: "🌞";
+    position: absolute;
+    height: 36px;
+    width: 36px;
+    left: 4px;
+    top: 4px;
+    background-color: var(--circle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: transform 0.4s ease, content 0.4s ease;
+  }
+
+  /* DARK MODE */
+  input:checked + .slider {
+    background-color: #334155;
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(46px);
+    content: "🌙";
+    background-color: #1e293b;
+  }
+
+  /* Change theme when checked */
+  input:checked ~ body {
+    background-color: #0f172a;
+    color: #e5e7eb;
+  }
+
+  .dark{
+    background-color: #334155;
+
+  }
+  
+</style>
+</head>
+
+<body>
+
+  <label class="toggle">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label>
+<script src="mode.js"></script>
+</body>
+</html>

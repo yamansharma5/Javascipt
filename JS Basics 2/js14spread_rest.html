@@ -1,0 +1,86 @@
+<!-- notes for spread and rest -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spread and Rest in JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    code, pre { background: #f4f4f4; padding: 5px; display: block; white-space: pre-wrap; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+
+<h1>Spread and Rest in JavaScript</h1>
+
+<h2>Spread Operator (...)</h2>
+<p><strong>Use Case:</strong> To expand (unpack) elements of an iterable (like array, string, or object).</p>
+
+<h3>In Arrays</h3>
+<pre><code>let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5];
+console.log(arr2); // [1, 2, 3, 4, 5]</code></pre>
+
+<h3>In Objects</h3>
+<pre><code>let obj1 = { a: 1, b: 2 };
+let obj2 = { ...obj1, c: 3 };
+console.log(obj2); // { a: 1, b: 2, c: 3 }</code></pre>
+
+<h3>In Function Calls</h3>
+<pre><code>function sum(a, b, c) {
+  return a + b + c;
+}
+let nums = [1, 2, 3];
+console.log(sum(...nums)); // 6</code></pre>
+
+<p><strong>Summary:</strong> Spread expands an array/object/string into individual elements.</p>
+
+<hr>
+
+<h2>Rest Operator (...)</h2>
+<p><strong>Use Case:</strong> To collect multiple elements into a single array (or object).</p>
+
+<h3>Function Parameters</h3>
+<pre><code>function sum(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+
+<h3>Destructuring Arrays</h3>
+<pre><code>let [first, ...rest] = [1, 2, 3, 4];
+console.log(first); // 1
+console.log(rest);  // [2, 3, 4]</code></pre>
+
+<h3>Destructuring Objects</h3>
+<pre><code>let { a, ...others } = { a: 1, b: 2, c: 3 };
+console.log(a);      // 1
+console.log(others); // { b: 2, c: 3 }</code></pre>
+
+<p><strong>Summary:</strong> Rest collects remaining values into an array or object.</p>
+
+<hr>
+
+<h2>Spread vs Rest (Side-by-side)</h2>
+<table>
+  <tr><th>Context</th><th>Spread</th><th>Rest</th></tr>
+  <tr><td>Arrays</td><td>[...arr] expands array</td><td>function(...args) collects args</td></tr>
+  <tr><td>Objects</td><td>{...obj} clones object</td><td>{ a, ...rest } = obj</td></tr>
+  <tr><td>Function Call</td><td>func(...arr)</td><td>function(...args)</td></tr>
+  <tr><td>Syntax</td><td>...</td><td>...</td></tr>
+  <tr><td>Role</td><td>Unpacks/Expands</td><td>Packs/Collects</td></tr>
+</table>
+
+<h2>Visual Example</h2>
+<pre><code>function example(a, b, ...rest) {
+  console.log(a);     // 1
+  console.log(b);     // 2
+  console.log(rest);  // [3, 4, 5]
+}
+
+let values = [1, 2, 3, 4, 5];
+example(...values);</code></pre>
+
+</body>
+</html>
